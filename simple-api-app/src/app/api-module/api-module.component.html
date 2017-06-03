@@ -1,0 +1,13 @@
+<button type="button" (click)="processApi()">Load API results</button>
+<table>
+    <tr>
+        <th>Department ID</th>
+        <th>Name</th>
+        <th>Group Name</th>
+        <th>Modified Date</th>
+    </tr>
+    <tr app-result-module>
+
+    </tr>
+</table>
+<pre>{{data | json}}</pre>
