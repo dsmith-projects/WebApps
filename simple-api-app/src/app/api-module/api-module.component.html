@@ -1,13 +1,19 @@
-<button type="button" (click)="processApi()">Load API results</button>
-<table>
-    <tr>
-        <th>Department ID</th>
-        <th>Name</th>
-        <th>Group Name</th>
-        <th>Modified Date</th>
-    </tr>
-    <tr app-result-module *ngFor="let result of results" [result]="result">
-
-    </tr>
-</table>
+<p>Press the button below to fill out the table with the API's results</p>
+<button type="button" class="btn btn-primary btn-block" (click)="processApi()">Load API results</button>
+<div class="margin-top">
+    <table class="table table-hover table-condensed">
+        <thead class="thead-inverse">
+            <tr class="info">
+                <th>Department ID</th>
+                <th>Name</th>
+                <th>Group Name</th>
+                <th>Modified Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr app-result-module *ngFor="let result of results" [result]="result">
+            </tr>
+        </tbody>
+    </table>
+</div>
 <!-- <pre>{{data | json}}</pre> -->
