@@ -6,8 +6,8 @@
         <th>Group Name</th>
         <th>Modified Date</th>
     </tr>
-    <tr app-result-module>
+    <tr app-result-module *ngFor="let result of results" [result]="result">
 
     </tr>
 </table>
-<pre>{{data | json}}</pre>
+<!-- <pre>{{data | json}}</pre> -->
