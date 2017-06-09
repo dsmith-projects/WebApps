@@ -2,10 +2,15 @@
 <td>{{ employee.nationalidnumber }}</td>
 <td>{{ employee.loginid }}</td>
 <td>{{ employee.jobtitle }}</td>
-<td>{{ employee.birthdate }}</td>
+<td>{{ employee.birthdate | date:'MMM/dd/yyyy' }}</td>
 <td>{{ employee.maritalstatus }}</td>
-<td>{{ employee.gender }}</td>
-<td>{{ employee.hiredate }}</td>
-<td>{{ employee.vacationhours }}</td>
+
+<!-- <td>{{ employee.gender }}</td> -->
+<td *ngIf="employee.gender == 'F'"><i class="fa fa-female" style="font-size:24px;color:#993380"></i></td>
+<td *ngIf="employee.gender == 'M'"><i class="fa fa-male" style="font-size:24px;color:#336699"></i></td>
+
+<td>{{ employee.hiredate | date:'MMM/dd/yyyy' }}</td>
+<td>{{ employee.vacationhours }} ({{ employee.vacationDays | number:'1.0-0' }} days)</td>
+<!-- <td>{{ employee.vacationhours }} ({{ employee.vacationDays |number:'1.0-0' }} days, {{ employee.vacationHoursRemainder }} h)</td> -->
 <td>{{ employee.sickleavehours }}</td>
-<td>{{ employee.modifieddate }}</td>
+<td>{{ employee.modifieddate | date:'MMM/dd/yyyy'}}</td>

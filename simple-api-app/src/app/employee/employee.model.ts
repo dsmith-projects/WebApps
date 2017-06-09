@@ -14,6 +14,8 @@ export class Employee{
 	rowguid: string;
 	modifieddate: string;
 	organizationnode: string;
+	vacationDays: number;
+	vacationHoursRemainder: number;
 
 
 	constructor (obj?: any) {
@@ -33,5 +35,9 @@ export class Employee{
 		this.modifieddate = obj["values"]["modifieddate"]["value"];
 		this.organizationnode = obj["values"]["organizationnode"]["value"];
 		//console.log(this.businessentityid + ' ' + this.nationalidnumber + ' ' + this.loginid + ' ' + this.jobtitle + ' ' + this.birthdate + ' ' + this.gender + ' ' + this.hiredate + ' ' + this.salariedflag + ' ' + this.vacationhours + ' ' + this.sickleavehours + ' ' + this.currentflag + ' ' + this.rowguid + ' ' + this.modifieddate + ' ' + this.organizationnode);
+
+		this.vacationDays = (parseInt(this.vacationhours) / 8);
+		this.vacationHoursRemainder = +this.vacationhours % 8;
+		//console.log("this.vacationDays: " + this.vacationDays);
 	}
 }

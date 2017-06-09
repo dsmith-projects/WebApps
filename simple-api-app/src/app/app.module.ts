@@ -19,9 +19,9 @@ import { EmployeeComponent } from './employee/employee.component';
 import { Employee } from './employee/employee.model';
 
 export const details: NavDetails[] = [
-  {label: 'Landing', name: 'Root', path: '', component: LandingComponent},
-  {label: 'SimpleApp', name: 'SimpleApp', path: 'simple-app', component: ApiModuleComponent},
-  {label: 'Pagination', name: 'Pagination', path: 'pagination', component: PaginationComponent}
+  {label: 'Home', name: 'Root', path: '', component: LandingComponent},
+  {label: 'Simple API App', name: 'SimpleApp', path: 'simple-app', component: ApiModuleComponent},
+  {label: 'API pagination', name: 'Pagination', path: 'pagination', component: PaginationComponent}
 ];
 
 const routes: Routes = [

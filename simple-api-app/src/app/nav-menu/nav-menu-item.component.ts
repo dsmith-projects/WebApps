@@ -4,7 +4,7 @@ import { Location } from '@angular/common'; // unsure what this import is for...
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-	selector: 'nav-menu-item',
+	selector: '[nav-menu-item]',
 	templateUrl: './nav-menu-item.component.html'
 })
 

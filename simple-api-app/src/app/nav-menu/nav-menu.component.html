@@ -1,5 +1,12 @@
 <!-- Navigation Menu -->
-<nav>
-	<nav-menu-item [item]="item" *ngFor="let item of items">
-	</nav-menu-item>
+<nav class="navbar navbar-inverse colors">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Home</a>
+            <!-- <nav-menu-item [item]="item" *ngFor="let item of items" class="marginrigth">
+        	</nav-menu-item> -->
+        </div>
+        <ul nav-menu-item [item]="item" *ngFor="let item of items" class="nav navbar-nav">
+        </ul>
+    </div>
 </nav>

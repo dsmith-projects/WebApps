@@ -1,10 +1,15 @@
 <h1 class="text-center">API app with Pagination</h1>
-
 <p class="text-primary">This app displays the results of an API that has more than one page.</p>
 <p>Press the button below to fill out the table with the API's results</p>
-<button type="button" class="btn btn-success" (click)="processApi()">Load API results</button>
-<button type="button" class="btn btn-info" (click)="nextPage()">Next page</button>
-<button type="button" class="btn btn-info" (click)="previousPage()">Previous page</button>
+<section>
+    <button type="button" class="btn btn-success" (click)="processApi()">Load API results</button>
+    
+    <button *ngIf="isPrevious" type="button" class="btn btn-info" (click)="previousPage()">Previous page</button>
+    <button *ngIf="!isPrevious" type="button" class="btn btn-info disabled" (click)="previousPage()">Previous page</button>    
+
+    <button *ngIf="isNext" type="button" class="btn btn-info" (click)="nextPage()">Next page</button>
+    <button *ngIf="!isNext" type="button" class="btn btn-info disabled" (click)="nextPage()">Next page</button>    
+</section>
 <div class="margin-top">
     <table class="table table-hover table-condensed">
         <thead class="thead-inverse">
@@ -13,7 +18,7 @@
                 <th>National ID Number</th>
                 <th>Login ID</th>
                 <th>Job Title</th>
-                <th>Birthdate</th>                
+                <th>Birthdate</th>
                 <th>Marital Status</th>
                 <th>Gender</th>
                 <th>Hire Date</th>
