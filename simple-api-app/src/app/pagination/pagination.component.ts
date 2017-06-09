@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Employee } from '../employee/employee.model';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-pagination',
@@ -11,28 +12,30 @@ export class PaginationComponent implements OnInit {
 	employees: Employee[];
 	data: Object;
 	
-  apiUrl: string;
+  apiUrl: string = 'http://gap-adventureworks.us-west-2.elasticbeanstalk.com/Human+Resources/employee/?_view=json&_expand=yes';
   next: string;
   previous: string;
   isNext: boolean = false;
   isPrevious: boolean  = false;
 
+  employeePayHistory: string;
+
   constructor(private http: Http) { }
 
   ngOnInit() {
-    this.apiUrl = 'http://gap-adventureworks.us-west-2.elasticbeanstalk.com/Human+Resources/employee/?_view=json&_expand=yes';
-  }
-  processApi(): void {	
+    
+    this.employeePayHistory = 'http://gap-adventureworks.us-west-2.elasticbeanstalk.com/Human+Resources/employeepayhistory/?_view=json&_expand=yes';
+
     this.employees = [];
-  	
-  	this.http.request(this.apiUrl).subscribe((res: Response) => {
-  		this.data = res.json();
+    
+    this.http.request(this.apiUrl).subscribe((res: Response) => {
+      this.data = res.json();
 
-  		var rows = this.data['restify']['rows'];
+      var rows = this.data['restify']['rows'];
 
-  		for(var i = 0; i < rows.length; i += 1) {	  		
-	  		this.employees.push(new Employee(rows[i]));	  		
-	  	}
+      for(var i = 0; i < rows.length; i += 1) {        
+        this.employees.push(new Employee(rows[i]));        
+      }
 
 
       if(this.next === undefined) {
@@ -74,15 +77,17 @@ export class PaginationComponent implements OnInit {
           console.error("Error del else - catch (Previous): " + err);
         }    
       }      
-  		
-  	});
-  	 	
+      
+    });
+
   }
+
+  
 
   nextPage(): void {
     if(this.isNext) {
       this.apiUrl = this.next;  
-      this.processApi();
+      this.ngOnInit();
 
     }
   }
@@ -90,7 +95,7 @@ export class PaginationComponent implements OnInit {
   previousPage(): void {
     if(this.isPrevious) {
       this.apiUrl = this.previous;
-      this.processApi();    
+      this.ngOnInit();    
     }    
     
   }

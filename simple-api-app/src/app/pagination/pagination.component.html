@@ -2,7 +2,7 @@
 <p class="text-primary">This app displays the results of an API that has more than one page.</p>
 <p>Press the button below to fill out the table with the API's results</p>
 <section>
-    <button type="button" class="btn btn-success" (click)="processApi()">Load API results</button>
+    <!-- <button type="button" class="btn btn-success" (click)="processApi()">Load API results</button> -->
     
     <button *ngIf="isPrevious" type="button" class="btn btn-info" (click)="previousPage()">Previous page</button>
     <button *ngIf="!isPrevious" type="button" class="btn btn-info disabled" (click)="previousPage()">Previous page</button>    

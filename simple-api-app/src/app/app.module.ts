@@ -18,6 +18,8 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { Employee } from './employee/employee.model';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 export const details: NavDetails[] = [
   {label: 'Home', name: 'Root', path: '', component: LandingComponent},
   {label: 'Simple API App', name: 'SimpleApp', path: 'simple-app', component: ApiModuleComponent},
@@ -46,6 +48,7 @@ const routes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
+    NgbModule.forRoot(),
   ],
   providers: [
     {provide: APP_BASE_HREF,    useValue: '/'},
