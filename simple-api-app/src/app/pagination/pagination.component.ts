@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Employee } from '../employee/employee.model';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Tooltip } from '../tooltip/tooltip.model';
 
 @Component({
   selector: 'app-pagination',
@@ -9,25 +10,20 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./pagination.component.css']
 })
 export class PaginationComponent implements OnInit {
-	employees: Employee[];
-	data: Object;
-	
+	employees: Employee[];  
+	data: Object;  
   apiUrl: string = 'http://gap-adventureworks.us-west-2.elasticbeanstalk.com/Human+Resources/employee/?_view=json&_expand=yes';
   next: string;
   previous: string;
   isNext: boolean = false;
   isPrevious: boolean  = false;
-
-  employeePayHistory: string;
+  
 
   constructor(private http: Http) { }
 
   ngOnInit() {
-    
-    this.employeePayHistory = 'http://gap-adventureworks.us-west-2.elasticbeanstalk.com/Human+Resources/employeepayhistory/?_view=json&_expand=yes';
-
     this.employees = [];
-    
+
     this.http.request(this.apiUrl).subscribe((res: Response) => {
       this.data = res.json();
 
@@ -81,9 +77,7 @@ export class PaginationComponent implements OnInit {
     });
 
   }
-
   
-
   nextPage(): void {
     if(this.isNext) {
       this.apiUrl = this.next;  

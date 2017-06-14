@@ -18,10 +18,12 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { Employee } from './employee/employee.model';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipComponent } from './tooltip/tooltip.component';
+
 
 export const details: NavDetails[] = [
-  {label: 'Home', name: 'Root', path: '', component: LandingComponent},
+  {label: 'Intro', name: 'Root', path: '', component: LandingComponent},
   {label: 'Simple API App', name: 'SimpleApp', path: 'simple-app', component: ApiModuleComponent},
   {label: 'API pagination', name: 'Pagination', path: 'pagination', component: PaginationComponent}
 ];
@@ -42,6 +44,7 @@ const routes: Routes = [
     LandingComponent,
     PaginationComponent,
     EmployeeComponent,
+    TooltipComponent,
   ],
   imports: [
     BrowserModule,
