@@ -1,4 +1,26 @@
 export class Employee{
+
+	constructor(
+		public businessentityid: string,
+		public nationalidnumber: string,
+		public loginid: string,
+		public jobtitle: string,
+		public birthdate: string,
+		public maritalstatus: string,
+		public gender: string,
+		public hiredate: string,
+		public salariedflag: string,
+		public vacationhours: string,
+		public sickleavehours: string,
+		public currentflag: string,
+		public rowguid: string,
+		public modifieddate: string,
+		public organizationnode: string,
+		public vacationDays: number,
+		public vacationHoursRemainder: number
+		) {
+	}
+
 	// businessentityid: string;
 	// nationalidnumber: string;
 	// loginid: string;
@@ -41,25 +63,5 @@ export class Employee{
 	// 	//console.log("this.vacationDays: " + this.vacationDays);
 	// }
 
-	constructor(
-		public businessentityid: string,
-		public nationalidnumber: string,
-		public loginid: string,
-		public jobtitle: string,
-		public birthdate: string,
-		public maritalstatus: string,
-		public gender: string,
-		public hiredate: string,
-		public salariedflag: string,
-		public vacationhours: string,
-		public sickleavehours: string,
-		public currentflag: string,
-		public rowguid: string,
-		public modifieddate: string,
-		public organizationnode: string,
-		public vacationDays: number,
-		public vacationHoursRemainder: number
-		) {
-
-	}
+	
 }
