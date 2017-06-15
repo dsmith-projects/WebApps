@@ -10,7 +10,7 @@ import { Employee } from '../employee/employee.model';
 })
 export class TooltipComponent implements OnInit {
   //@Input() businessentityid: number; 
-  @Input() employee: Employee; 
+  @Input() employee_tt: Employee; 
   data: Object;
   employeePayHistory: string = 'http://gap-adventureworks.us-west-2.elasticbeanstalk.com/Human+Resources/employeepayhistory/?_view=json&_expand=yes';
 
@@ -24,7 +24,7 @@ export class TooltipComponent implements OnInit {
 
       var rows = this.data['restify']['rows'];
       for(var i = 0; i < rows.length; i += 1) {        
-        console.log(this.employee);              
+        console.log("Soy employee TT " + this.employee_tt.businessentityid);              
       }   
 
     });

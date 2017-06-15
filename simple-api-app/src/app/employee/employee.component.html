@@ -1,18 +1,18 @@
-<td>{{ employee.businessentityid }}<a app-tooltip href="#" data-toggle="modal" data-target="#myModal"></a></td>
+<td><a app-tooltip [employee_tt]="employee_i" href="#" data-toggle="modal" data-target="#myModal"></a></td>
 
-<td>{{ employee.nationalidnumber }}</td>
-<td>{{ employee.loginid }}</td>
-<td>{{ employee.jobtitle }}</td>
-<td>{{ employee.birthdate | date:'MMM/dd/yyyy' }}</td>
-<td>{{ employee.maritalstatus }}</td>
+<td>{{ employee_i.nationalidnumber }}</td>
+<td>{{ employee_i.loginid }}</td>
+<td>{{ employee_i.jobtitle }}</td>
+<td>{{ employee_i.birthdate | date:'MMM/dd/yyyy' }}</td>
+<td>{{ employee_i.maritalstatus }}</td>
 
-<!-- <td>{{ employee.gender }}</td> -->
-<td *ngIf="employee.gender == 'F'"><i class="fa fa-female" style="font-size:24px;color:#993380"></i></td>
-<td *ngIf="employee.gender == 'M'"><i class="fa fa-male" style="font-size:24px;color:#336699"></i></td>
+<!-- <td>{{ employee_i.gender }}</td> -->
+<td *ngIf="employee_i.gender == 'F'"><i class="fa fa-female" style="font-size:24px;color:#993380"></i></td>
+<td *ngIf="employee_i.gender == 'M'"><i class="fa fa-male" style="font-size:24px;color:#336699"></i></td>
 
-<td>{{ employee.hiredate | date:'MMM/dd/yyyy' }}</td>
-<td>{{ employee.vacationhours }} ({{ employee.vacationDays | number:'1.0-0' }} days)</td>
-<!-- <td>{{ employee.vacationhours }} ({{ employee.vacationDays |number:'1.0-0' }} days, {{ employee.vacationHoursRemainder }} h)</td> -->
-<td>{{ employee.sickleavehours }}</td>
-<td>{{ employee.modifieddate | date:'MMM/dd/yyyy'}}</td>
+<td>{{ employee_i.hiredate | date:'MMM/dd/yyyy' }}</td>
+<td>{{ employee_i.vacationhours }} ({{ employee_i.vacationDays | number:'1.0-0' }} days)</td>
+<!-- <td>{{ employee_i.vacationhours }} ({{ employee_i.vacationDays |number:'1.0-0' }} days, {{ employee_i.vacationHoursRemainder }} h)</td> -->
+<td>{{ employee_i.sickleavehours }}</td>
+<td>{{ employee_i.modifieddate | date:'MMM/dd/yyyy'}}</td>
 

@@ -13,7 +13,7 @@ import { Tooltip } from '../tooltip/tooltip.model';
 })
 
 export class EmployeeComponent implements OnInit {
-	@Input() employee: Employee;
+	@Input() employee_i: Employee;
   @Output() onTooltipSelected: EventEmitter<Tooltip>;
   private currentTooltip: Tooltip;
 	// @HostListener('mouseenter') onMouseEnter() {
