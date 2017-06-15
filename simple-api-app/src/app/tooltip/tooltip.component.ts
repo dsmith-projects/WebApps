@@ -24,9 +24,7 @@ export class TooltipComponent implements OnInit {
 
       var rows = this.data['restify']['rows'];
       for(var i = 0; i < rows.length; i += 1) {        
-        ///console.log(rows[i]['values']['rate']['value']);     
-        //this.businessEntitiesArray.push(rows[i]['values']['businessentityid']['value']);
-        //this.rateArray.push(rows[i]['values']['rate']['value']);   
+        console.log(this.employee);              
       }   
 
     });

@@ -29,8 +29,46 @@ export class PaginationComponent implements OnInit {
 
       var rows = this.data['restify']['rows'];
 
-      for(var i = 0; i < rows.length; i += 1) {        
-        this.employees.push(new Employee(rows[i]));        
+      for(var i = 0; i < rows.length; i += 1) { 
+        var businessentityid = rows[i]["values"]["businessentityid"]["value"];
+        var nationalidnumber = rows[i]["values"]["nationalidnumber"]["value"];
+        var loginid = rows[i]["values"]["loginid"]["value"];
+        var jobtitle = rows[i]["values"]["jobtitle"]["value"];    
+        var birthdate = rows[i]["values"]["birthdate"]["value"];
+        var maritalstatus = rows[i]["values"]["maritalstatus"]["value"];
+        var gender = rows[i]["values"]["gender"]["value"];    
+        var hiredate = rows[i]["values"]["hiredate"]["value"];
+        var salariedflag = rows[i]["values"]["salariedflag"]["value"];
+        var vacationhours = rows[i]["values"]["vacationhours"]["value"];    
+        var sickleavehours = rows[i]["values"]["sickleavehours"]["value"];
+        var currentflag = rows[i]["values"]["currentflag"]["value"];
+        var rowguid = rows[i]["values"]["rowguid"]["value"];
+        var modifieddate = rows[i]["values"]["modifieddate"]["value"];
+        var organizationnode = rows[i]["values"]["organizationnode"]["value"];
+
+        var vacationDays = (parseInt(vacationhours) / 8);
+        var vacationHoursRemainder = +vacationhours % 8;
+
+
+        //this.employees.push(new Employee(rows[i]));        
+        this.employees.push(new Employee(
+          businessentityid, 
+          nationalidnumber,
+          loginid,
+          jobtitle,
+          birthdate,
+          maritalstatus,
+          gender,
+          hiredate,
+          salariedflag,
+          vacationhours,
+          sickleavehours,
+          currentflag,
+          rowguid,
+          modifieddate,
+          organizationnode,
+          vacationDays,
+          vacationHoursRemainder));        
       }
 
 
