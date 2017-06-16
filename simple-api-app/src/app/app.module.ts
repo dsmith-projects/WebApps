@@ -20,6 +20,7 @@ import { Employee } from './employee/employee.model';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TooltipComponent } from './tooltip/tooltip.component';
+import { EmployeeRowComponent } from './employee-row/employee-row.component';
 
 
 export const details: NavDetails[] = [
@@ -45,6 +46,7 @@ const routes: Routes = [
     PaginationComponent,
     EmployeeComponent,
     TooltipComponent,
+    EmployeeRowComponent,
   ],
   imports: [
     BrowserModule,

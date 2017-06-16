@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, HostListener, Output, EventEmitter } from '@angular/core';
 import { PaginationComponent } from '../pagination/pagination.component';
 import { Employee } from './employee.model';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TooltipComponent } from '../tooltip/tooltip.component';
 import { Tooltip } from '../tooltip/tooltip.model';
 
@@ -13,14 +12,13 @@ import { Tooltip } from '../tooltip/tooltip.model';
 
 export class EmployeeComponent implements OnInit {
 	@Input() employee_i: Employee;
-  tooltip: Tooltip;
-  //@Output() onTooltipSelected: EventEmitter<Tooltip>;
-  
+ 
 	// @HostListener('mouseenter') onMouseEnter() {
 	// 	new TooltipComponent();
 	// }
   
-  constructor() { }
+  constructor() {}
+
 
   ngOnInit() {
     //console.log('XXX: ' + this.employee_i.businessentityid);

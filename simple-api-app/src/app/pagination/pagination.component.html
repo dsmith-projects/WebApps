@@ -28,9 +28,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr app-employee *ngFor="let employee of employees" [employee_i]="employee">
+            <tr app-employee-row *ngFor="let employee of employees" [employee_r]="employee"
+            (click)='employeeWasSelected(employee)'>
             </tr>
         </tbody>
     </table>
 </div>
 <p><small>End of the table</small></p>
+<!-- (onEmployeeSelected)="employeeWasSelected($event)" aca html del modal , usarlo como tag-->

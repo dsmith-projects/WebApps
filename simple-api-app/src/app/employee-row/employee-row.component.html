@@ -1,0 +1,18 @@
+<!-- <td><a app-tooltip [employee_tt]="employee_r" href="#"></a></td> -->
+<td app-tooltip [employee_tt]="employee_r"></td>
+
+<td>{{ employee_r.nationalidnumber }}</td>
+<td>{{ employee_r.loginid }}</td>
+<td>{{ employee_r.jobtitle }}</td>
+<td>{{ employee_r.birthdate | date:'MMM/dd/yyyy' }}</td>
+<td>{{ employee_r.maritalstatus }}</td>
+
+<!-- <td>{{ employee_r.gender }}</td> -->
+<td *ngIf="employee_r.gender == 'F'"><i class="fa fa-female" style="font-size:24px;color:#993380"></i></td>
+<td *ngIf="employee_r.gender == 'M'"><i class="fa fa-male" style="font-size:24px;color:#336699"></i></td>
+
+<td>{{ employee_r.hiredate | date:'MMM/dd/yyyy' }}</td>
+<td>{{ employee_r.vacationhours }} ({{ employee_r.vacationDays | number:'1.0-0' }} days)</td>
+<!-- <td>{{ employee_r.vacationhours }} ({{ employee_r.vacationDays |number:'1.0-0' }} days, {{ employee_r.vacationHoursRemainder }} h)</td> -->
+<td>{{ employee_r.sickleavehours }}</td>
+<td>{{ employee_r.modifieddate | date:'MMM/dd/yyyy'}}</td>

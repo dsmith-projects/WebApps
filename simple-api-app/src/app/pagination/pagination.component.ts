@@ -10,6 +10,7 @@ import { Tooltip } from '../tooltip/tooltip.model';
   styleUrls: ['./pagination.component.css']
 })
 export class PaginationComponent implements OnInit {
+  private currentEmployee: Employee;
 	employees: Employee[];  
 	data: Object;  
   apiUrl: string = 'http://gap-adventureworks.us-west-2.elasticbeanstalk.com/Human+Resources/employee/?_view=json&_expand=yes';
@@ -18,8 +19,11 @@ export class PaginationComponent implements OnInit {
   isNext: boolean = false;
   isPrevious: boolean  = false;
   
+  data2: Object;
+  employeePayHistory: string = 'http://gap-adventureworks.us-west-2.elasticbeanstalk.com/Human+Resources/employeepayhistory/?_view=json&_expand=yes';
+  currentRate: string; 
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private http2: Http) { }
 
   ngOnInit() {
     this.employees = [];
@@ -114,6 +118,23 @@ export class PaginationComponent implements OnInit {
       
     });
 
+    this.http2.request(this.employeePayHistory).subscribe((res: Response) => {
+      this.data2 = res.json();
+
+      var rows2 = this.data2['restify']['rows'];
+
+      for(var i = 0; i < rows2.length; i += 1) {
+        // console.log(this.employee_tt.businessentityid);   
+        // if(this.employee_tt.businessentityid === rows[i]['values']['businessentityid']['value']) {
+        //   console.log("Soy employee TT " + this.employee_tt.businessentityid); 
+        //   console.log('Rate: ' + rows[i]['values']['rate']['value']);
+        //   this.currentRate = rows[i]['values']['rate']['value'];
+        //   break;
+        // }            
+      }   
+
+    });
+
   }
   
   nextPage(): void {
@@ -131,5 +152,12 @@ export class PaginationComponent implements OnInit {
     }    
     
   }
+
+  employeeWasSelected(employee: Employee): void {
+    this.currentEmployee = employee;    
+    console.log('Employee clicked: ', employee);
+    console.log('Employee.bei: ', employee.businessentityid);
+  }
+  
 
 }
